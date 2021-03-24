@@ -1,0 +1,48 @@
+body { }
+
+input {
+    margin: 5px 0;
+    padding: 5px;
+    min-width: 250px;
+}
+
+.message {
+  position: relative;
+  display: block;
+  background: #eee;
+  padding: 10px 10px 20px;
+}
+
+.message span {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  color: #333;
+  font-size: .8rem;
+}
+
+.message span.toolong {
+  color: red;
+}
+
+.counter {
+  display: flex;
+  justify-content: center;
+}
+
+.counter button {
+  width: 40px;
+  height: 40px;
+  background: #41A5E1;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.counter input {
+  margin: 5px;
+  width: 50px;
+  min-width: 50px;
+}

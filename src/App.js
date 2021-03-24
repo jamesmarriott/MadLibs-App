@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+//import dependencies
+import React, { useState } from "react"
+import { Button, Container, Grid, Row, Col } from "react-bootstrap";
+import Header from "./Header"
+import EntryForm from "./EntryForm"
+import MadLibDisplay from "./MadLibDisplay"
+import Footer from "./Footer"
 import './App.css';
+import madLibData from "./data";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+  const [show, toggleShow] = useState (false)
+    return (
+       <>
+          <Container fluid>
+            <Row>
+              <Col><EntryForm/></Col>
+              <Col><MadLibDisplay/></Col>
+            </Row>
+            </Container>  
+      </>
+    )
 }
 
-export default App;
+export default App

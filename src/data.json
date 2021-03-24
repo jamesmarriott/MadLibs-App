@@ -1,0 +1,27 @@
+[
+  {
+    "madLibTitle": "Easter Bunny",
+    "imageURL": "https://source.unsplash.com/N-gQVr6CZ70",
+    "madLibText": "How much do you really know about the REAL Easter Bunny? Here's the ACTUAL scoop on this mysterious ANIMAL. Q: Does the Easter Bunny have magical POWERS. A: Absolutely. How else could one furry CRITTER deliver candy-filled DELIGHTS to children everywhere in one CRAZY night? Q: Santa has elves and reindeer to help  him make and deliver PRESENTS on Christmas Eve. Does the Easter Bunny have any right-hand HELPERS? A: As far as we know, the Easter Bunny like to WORK alone. Like other bunnies, he is a very shy CREATURE and prefers to DELIVER all by himself. Q. Where does the Easter Bunny live? A: Only the Easter Bunny knows the answer to this TRICKY question, though some PEOPLE believe he lives in a cozy BURRON in the GROUND",
+    "subWords" : [
+        {
+          "SubId" : 1,
+          "InpType" : 9,
+          "InpPos" : 9,
+          "InpDefault" : "REAL"
+        },
+        {
+          "SubId" : 2,
+          "InpType" : 9,
+          "InpPos" : 14,
+          "InpDefault" : "ACTUAL"
+        },
+        {
+          "SubId" : 3,
+          "InpType" : 3,
+          "InpPos" : 14,
+          "InpDefault" : "ANIMAL"
+        }
+    ]
+  }
+]
