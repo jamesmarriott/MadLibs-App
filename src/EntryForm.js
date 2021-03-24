@@ -10,7 +10,7 @@ const EntryForm = () => {
         setMadLib(jsonData[0])
       }, [])
 
-      const handleChange = ((id, event) => {
+      const handleChange = (event => {
         const newElement = { ... madLib}
         console.log(newElement)
       })
@@ -20,7 +20,8 @@ const EntryForm = () => {
       return (
          
             <Container fluid>
-            <h3>{madLibTitle}</h3>
+            {subWords.map(sub => (
+            <input type="text" label="noun" value={sub.InpDefault} placeHolder="text" onChange={(e) => {handleChange(e.target.value)}} />))}
             </Container>
 
     )
