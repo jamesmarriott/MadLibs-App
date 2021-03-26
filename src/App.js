@@ -6,7 +6,6 @@ import EntryForm from "./EntryForm"
 import MadLibDisplay from "./MadLibDisplay"
 import Footer from "./Footer"
 import './App.css';
-import madLibData from "./data";
 
 const App = () => {
   const [show, toggleShow] = useState (false)
@@ -14,8 +13,9 @@ const App = () => {
        <>
           <Container fluid>
             <Row>
-              <Col><EntryForm/></Col>
-              <Col><MadLibDisplay/></Col>
+              <Col>
+                  <EntryForm/>
+              </Col>
             </Row>
             </Container>  
       </>
