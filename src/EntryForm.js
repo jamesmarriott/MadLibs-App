@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react"
 import { FormControl, Button, Container, Grid, Row, Col, Form } from "react-bootstrap";
+import MadLibDisplay from "./MadLibDisplay";
 import MadLibForm from "./MadLibForm"
 
-function EntryForm() {
+const EntryForm = () => {
 
   const [madLib, setMadLib]  = useState()
   const [userInput, setInputData] = useState({enterNewWord: ""})
@@ -10,25 +11,20 @@ function EntryForm() {
   const [submitted, setSubmitted] = useState([])
   const [data, setData] = useState([])
   const [arrayData, setarrayData] = useState([])
-
-  const getData=()=>{
-    fetch('data.json',
-    {headers : { 
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    }
-    })
-    .then(function(response){
-    return response.json()
-    })
-    .then(function(myJson) {
-    setData(myJson)
-    })
-  }
-
+  const [isLoading, setIsLoading] = useState(true)
+  
+// useEffect.
   useEffect(()=>{
-    getData()
-  },[])
+    getData();}
+    ,[]);
+
+// Separate function.
+  async function getData() {
+  const response = await fetch('data.json');
+  const myJson = await response.json();
+  setData(myJson)
+  setIsLoading(false)
+  }
 
   function handleSubmit() {
     alert("this happened")
@@ -40,41 +36,15 @@ function EntryForm() {
         ... prevInput,
         [name] : value}))
   }
+
     
   return (
     <>
-    {data ?
-      (() => {
-        let splitArray = data[0].madLibText.split(" ")
-        splitArray.map(item =>
-          <div>item</div>)
-        if (splitArray="Do") {
-          return (
-          <div>{splitArray}</div>
-          )
-          } else {
-            return (
-              <div>nogo</div>
-            )
-          }
-      })() : null}
-  </>
-  )
-}
-
-        
-/*       
-      if {data.madLibText.split(" ") ? ) : null}
+    <div>
+    {isLoading ? <h1>Loading</h1> : <MadLibDisplay { ... data} />} 
     </div>
-    //   <input type="text" name="madLibTitle" value={madLibTitle} onChange={changeTitle}/>
-    //   <h1>{subWords ? subWords.InpDefault: null}</h1>
-    //   <form onSumbit={handleSubmit}>
-    //       {subWords ? subWords.map(sub => (
-    //         <input type="text" name={sub.SubId}
-    //         value={sub.InpDefault}
-    //         />
-    //       )): null}
-    //   </form>
-    // </div> */
+    </>
+  )
+  }
 
 export default EntryForm
