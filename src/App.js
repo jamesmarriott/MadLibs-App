@@ -1,22 +1,23 @@
 //import dependencies
-import React, { useState } from "react"
-import { Button, Container, Grid, Row, Col } from "react-bootstrap";
-import Header from "./Header"
+import React from "react"
+import { Container, Row, Col } from "react-bootstrap";
 import EntryForm from "./EntryForm"
-import MadLibDisplay from "./MadLibDisplay"
+import Header from "./Header"
 import Footer from "./Footer"
 import './App.css';
 
 const App = () => {
-  const [show, toggleShow] = useState (false)
+
     return (
        <>
           <Container fluid>
-            <Row>
-              <Col>
-                  <EntryForm/>
-              </Col>
-            </Row>
+            <Header/>
+              <Row>
+                <Col>
+                    <EntryForm/>
+                </Col>
+              </Row>
+            <Footer/>
             </Container>  
       </>
     )

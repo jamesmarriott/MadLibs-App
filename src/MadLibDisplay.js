@@ -1,23 +1,70 @@
-import React, { useState } from "react"
-import { Button, Container, Grid, Row, Col } from "react-bootstrap";
+import React, { useState, useEffect } from "react"
+import { NavItem } from "react-bootstrap"
+// import displayInput from "./displayInput";
 
-const MadLibDisplay = ({ madLibTitle, imageURL, madLibText, subWords,  ... other }) => {
+const MadLibDisplay = ({ madLibTitle, imageURL, madLibText, subWords,  ...other }) => {
 
+    
+    const madLibTextArray = Array.from(madLibText.split(" "))
+
+
+    const [userWord, UseWordsSet] = useState([])
+    const [madLib, setMadLib]  = useState()
+    const [userInput, setInputData] = useState({enterNewWord: ""})
+    const [submitted, setSubmitted] = useState([])
+    const [madTextDisplay, setMadTextDisplay] = useState([madLibTextArray])
+    
+    function handleSubmit(event) {
+      event.preventDefault()
+      setSubmitted(prevArray =>
+        [... prevArray,
+          //here is a problem
+        ])
+    }
+
+    useEffect(() => {
+
+    })
   
-    // split the madLibText string into an array
-    // split the subWords into an array
-    // loop through the madLibText - if index number is the same as next subWords then swap it to input
-    // if its not an input put in the word as normal
+    function handleChange(event, sub) {
+      const {name, value} = event.target
 
-    return (
-      <>
-        <Container fluid>
+      setMadLib(prevInput =>
+        ({ ...prevInput,
+          [name]: value})
+        )
+      setMadTextDisplay(prevDisplay => {
+        const newDisplay = [...prevDisplay]
+        newDisplay[0][sub.InpPos-1] = value
+        console.log(newDisplay)
+        return newDisplay
+      })
+      }
+
+return (
+        <div>
+        <form onSubmit={handleSubmit}>
           <h1>{madLibTitle}</h1>
-          <p>{madLibText}</p>
-
-
-        </Container>
-      </>
+          {madTextDisplay[0].map((word, Id) =>
+          <span key={Id}> {word}
+          </span>  
+          )}
+          {/* {madTextDisplay.map(word =>
+            <span key={word}> {word}
+            </span>
+          )} */}
+          {Object.values(subWords).map(sub=>
+            <input key="sub.SubId"
+            type="text"
+            name={sub.SubId}
+            value={userInput.userInput}
+            placeHolder={sub.InpDefault}
+            onChange={(e) => {handleChange(e, sub)}}
+          />
+          )}
+        <button>Get Mad!</button>
+        </form>
+        </div>
     )
 }
 
