@@ -21,10 +21,6 @@ const MadLibDisplay = ({ madLibTitle, imageURL, madLibText, subWords,  ...other 
           //here is a problem
         ])
     }
-
-    useEffect(() => {
-
-    })
   
     function handleChange(event, sub) {
       const {name, value} = event.target
@@ -49,10 +45,6 @@ return (
           <span key={Id}> {word}
           </span>  
           )}
-          {/* {madTextDisplay.map(word =>
-            <span key={word}> {word}
-            </span>
-          )} */}
           {Object.values(subWords).map(sub=>
             <input key="sub.SubId"
             type="text"
