@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
-import MadLibDisplay from "./MadLibDisplay";
+import FormDisplay from "./FormDisplay";
 
-const EntryForm = () => {
+const GetJSON = () => {
 
   const [data, setData] = useState({})
   const [isLoading, setIsLoading] = useState(true)
@@ -22,10 +22,10 @@ const EntryForm = () => {
   return (
     <>
     <div>
-    {isLoading ? <h1>Loading</h1> : <MadLibDisplay { ... data} />} 
+    {isLoading ? <h1>Loading</h1> : <FormDisplay { ... data} />} 
     </div>
     </>
   )
   }
 
-export default EntryForm
+export default GetJSON

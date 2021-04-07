@@ -1,12 +1,13 @@
 import React from "react"
-import { Container } from "react-bootstrap";
+import {  Jumbotron, Container } from "react-bootstrap";
 
 const Header = () => {
     return (
-      <>
-        <Container fluid>
-          <h1 className="header">Easter Madlibs!</h1>
-        </Container>        
+      <>  <Container>
+          <Jumbotron>
+            <h1 className="header">Madlibs App!</h1>
+          </Jumbotron>
+          </Container>
       </>
     )
 }
