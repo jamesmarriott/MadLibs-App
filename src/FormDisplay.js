@@ -10,7 +10,7 @@ const FormDisplay = ({ madLibTitle, imageURL, madLibText, subWords,  ...other })
     
 
     const [madLib, setMadLib]  = useState()
-    const [userInput, setInputData] = useState({enterNewWord: ""})
+    const [userInput] = useState({enterNewWord: ""})
     // const [submitted, setSubmitted] = useState([])
     const [madTextDisplay, setMadTextDisplay] = useState([madLibTextArray])
     const [isMadDisplayed, setIsMadDisplayed] = useState(false)
@@ -24,7 +24,8 @@ const FormDisplay = ({ madLibTitle, imageURL, madLibText, subWords,  ...other })
     //       // form validation setup
     //     ])
     // }
-  
+
+
     function handleChange(event, sub) {
       const {name, value} = event.target
       setMadLib(prevInput =>
@@ -44,6 +45,7 @@ return (
         <Container className="text-center">
             <Card.Header>
             <h1>MadLibz!</h1>
+            <h2>{madLib}</h2>
             {/* <h5>A <Card.Link href="https://en.wikipedia.org/wiki/Mad_Libs">MadLibz app</Card.Link></h5> */}
             <p>Enter words - adjectives, nouns etc. - using the form below and click 'Create' to make a funny story.</p>
             </Card.Header>
