@@ -28,6 +28,7 @@ const FormDisplay = ({ madLibTitle, imageURL, madLibText, subWords,  ...other })
 
     function handleChange(event, sub) {
       const {name, value} = event.target
+      console.log(madLib)
       setMadLib(prevInput =>
         ({ ...prevInput,
           [name]: value})
@@ -37,7 +38,6 @@ const FormDisplay = ({ madLibTitle, imageURL, madLibText, subWords,  ...other })
         newDisplay[0][sub.InpPos-1] = value + sub.TrailingPunct
         return newDisplay
       })
-      console.log(madTextDisplay)
       }
 
 
@@ -45,7 +45,6 @@ return (
         <Container className="text-center">
             <Card.Header>
             <h1>MadLibz!</h1>
-            <h2>{madLib}</h2>
             {/* <h5>A <Card.Link href="https://en.wikipedia.org/wiki/Mad_Libs">MadLibz app</Card.Link></h5> */}
             <p>Enter words - adjectives, nouns etc. - using the form below and click 'Create' to make a funny story.</p>
             </Card.Header>
