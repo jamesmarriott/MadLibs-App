@@ -8,112 +8,129 @@
           "InpType" : 1,
           "InpSubType" : 1,
           "InpPos" : 9,
-          "InpDefault" : "adjective"
+          "InpDefault" : "adjective",
+          "TrailingPunct" : ""
         },
         {
           "SubId" : 2,
           "InpType" : 1,
           "InpSubType" : 1,
           "InpPos" : 14,
-          "InpDefault" : "adjective"
+          "InpDefault" : "adjective",
+          "TrailingPunct" : ""
         },
         {
           "SubId" : 3,
           "InpType" : 3,
           "InpSubType" : 8,
           "InpPos" : 19,
-          "InpDefault" : "noun(animal) + ."
+          "InpDefault" : "noun(animal)",
+          "TrailingPunct" : "."
+          
         },
         {
           "SubId" : 4,
           "InpType" : 3,
           "InpSubType" : 2,
           "InpPos" : 26,
-          "InpDefault" : "noun(plural) + ."
+          "InpDefault" : "noun(plural)",
+          "TrailingPunct" : "."
         },
         {
           "SubId" : 5,
           "InpType" : 3,
           "InpSubType" : 1,
           "InpPos" : 33,
-          "InpDefault" : "noun"
+          "InpDefault" : "noun",
+          "TrailingPunct" : ""
         },
         {
           "SubId" : 6,
           "InpType" : 3,
           "InpSubType" : 3,
           "InpPos" : 36,
-          "InpDefault" : "noun(plural) + ."
+          "InpDefault" : "noun(plural)",
+          "TrailingPunct" : "."
         },
         {
           "SubId" : 7,
           "InpType" : 1,
           "InpSubType" : 1,
           "InpPos" : 42,
-          "InpDefault" : "adjective"
+          "InpDefault" : "adjective",
+          "TrailingPunct" : ""
         },
         {
           "SubId" : 8,
           "InpType" : 3,
           "InpSubType" : 2,
           "InpPos" : 56,
-          "InpDefault" : "noun(plural)"
+          "InpDefault" : "noun(plural)",
+          "TrailingPunct" : ""
         },
         {
           "SubId" : 9,
           "InpType" : 3,
           "InpSubType" : 2,
           "InpPos" : 66,
-          "InpDefault" : "noun(plural) + ?"
+          "InpDefault" : "noun(plural)",
+          "TrailingPunct" : "?"
         },
         {
           "SubId" : 10,
           "InpType" : 4,
           "InpSubType" : 1,
           "InpPos" : 77,
-          "InpDefault" : "verb(present)"
+          "InpDefault" : "verb(present)",
+          "TrailingPunct" : ""
         },
         {
           "SubId" : 11,
           "InpType" : 3,
           "InpSubType" : 1,
           "InpPos" : 87,
-          "InpDefault" : "noun"
+          "InpDefault" : "noun",
+          "TrailingPunct" : ""
         },
         {
           "SubId" : 12,
           "InpType" : 4,
           "InpSubType" : 1,
           "InpPos" : 91,
-          "InpDefault" : "verb"
+          "InpDefault" : "verb",
+          "TrailingPunct" : ""
         },
         {
           "SubId" : 13,
           "InpType" : 1,
           "InpSubType" : 1,
           "InpPos" : 110,
-          "InpDefault" : "adjective"
+          "InpDefault" : "adjective",
+          "TrailingPunct" : ""
         },
         {
           "SubId" : 14,
           "InpType" : 3,
           "InpSubType" : 2,
           "InpPos" : 114,
-          "InpDefault" : "noun(plural)"
+          "InpDefault" : "noun(plural)",
+          "TrailingPunct" : ""
         },
         {
           "SubId" : 15,
           "InpType" : 3,
           "InpSubType" : 1,
           "InpPos" : 121,
-          "InpDefault" : "noun"
+          "InpDefault" : "noun",
+          "TrailingPunct" : ""
         },
         {
           "SubId" : 16,
           "InpType" : 3,
           "InpSubType" : 7,
           "InpPos" : 124, 
-          "InpDefault" : "noun(place) + ."
+          "InpDefault" : "noun(place)",
+          "TrailingPunct" : "."
         }
     ]
 }
