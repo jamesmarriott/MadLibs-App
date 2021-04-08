@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react"
-import { Jumbotron, Card, Col, Row, Container, Form, InputGroup, NavItem } from "react-bootstrap"
+import React, { useState } from "react"
+import { Card, Col, Container, Form } from "react-bootstrap"
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -8,22 +8,22 @@ const FormDisplay = ({ madLibTitle, imageURL, madLibText, subWords,  ...other })
 
     const madLibTextArray = Array.from(madLibText.split(" "))
     
-    const [userWord, UseWordsSet] = useState([])
+
     const [madLib, setMadLib]  = useState()
     const [userInput, setInputData] = useState({enterNewWord: ""})
-    const [submitted, setSubmitted] = useState([])
+    // const [submitted, setSubmitted] = useState([])
     const [madTextDisplay, setMadTextDisplay] = useState([madLibTextArray])
     const [isMadDisplayed, setIsMadDisplayed] = useState(false)
 
     const toggleMad = () => setIsMadDisplayed(!isMadDisplayed)
         
-    function handleSubmit(event) {
-      event.preventDefault()
-      setSubmitted(prevArray =>
-        [... prevArray,
-          // form validation setup
-        ])
-    }
+    // function handleSubmit(event) {
+    //   event.preventDefault()
+    //   setSubmitted(prevArray =>
+    //     [... prevArray,
+    //       // form validation setup
+    //     ])
+    // }
   
     function handleChange(event, sub) {
       const {name, value} = event.target
