@@ -50,7 +50,7 @@
           "InpSubType" : 3,
           "InpPos" : 36,
           "InpDefault" : "noun(plural)",
-          "TrailingPunct" : "."
+          "TrailingPunct" : ""
         },
         {
           "SubId" : 7,
@@ -130,7 +130,7 @@
           "InpSubType" : 7,
           "InpPos" : 124, 
           "InpDefault" : "noun(place)",
-          "TrailingPunct" : "."
+          "   " : "."
         }
     ]
 }

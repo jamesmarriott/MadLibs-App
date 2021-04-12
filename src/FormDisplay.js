@@ -4,10 +4,8 @@ import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const FormDisplay = ({ madLibTitle, imageURL, madLibText, subWords,  ...other }) => {
-    
 
     const madLibTextArray = Array.from(madLibText.split(" "))
-    
 
     const [madLib, setMadLib]  = useState()
     const [userInput] = useState({enterNewWord: ""})
