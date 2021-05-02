@@ -1,136 +1,103 @@
 {
     "madLibTitle": "Who is the Real Easter Bunny?",
     "imageURL": "https://source.unsplash.com/N-gQVr6CZ70/",
-    "madLibText": "How much do you really know about the <ADJECTIVE> Easter Bunny? Here's the <ADJECTIVE> scoop on this mysterious <NOUN>. Does the Easter Bunny have magical <NOUN(PLURAL)>? Absolutely! How else could one furry <NOUN> deliver candy-filled <NOUN(PLURAL)> to children everywhere in one <ADJECTIVE> night? Santa has elves and reindeer to help  him make and deliver <NOUN(PLURAL)> on Christmas. Does the Easter Bunny have any right-hand <NOUN(PLURAL)>? As far as we know, the Easter Bunny like to <VERB> alone. Like other bunnies, he is a very shy <NOUN> and prefers to <VERB> all by himself. Where does the Easter Bunny live? Only the Easter Bunny knows the answer to this <ADJECTIVE> question, though some <NOUN(PLURAL)> believe he lives in a cozy <NOUN> in the <PLACE>.",
+    "madLibText": "How much do you really know about the <1> Easter Bunny? Here's the <2> scoop on this mysterious <3>. Does the Easter Bunny have magical <4>? Absolutely! How else could one furry <5> deliver candy-filled <6> to children everywhere in one <7> night? Santa has elves and reindeer to help  him make and deliver <8> on Christmas. Does the Easter Bunny have any right-hand <9>? As far as we know, the Easter Bunny like to <10> alone. Like other bunnies, he is a very shy <11> and prefers to <12> all by himself. Where does the Easter Bunny live? Only the Easter Bunny knows the answer to this <13> question, though some <14> believe he lives in a cozy <15> in <16>.",
     "subWords" : [
         {
           "SubId" : 1,
-          "InpType" : 1,
-          "InpSubType" : 1,
+          "InpType" : 11,
           "InpPos" : 9,
-          "InpDefault" : "adjective",
           "TrailingPunct" : ""
         },
         {
           "SubId" : 2,
-          "InpType" : 1,
-          "InpSubType" : 1,
+          "InpType" : 11,
           "InpPos" : 14,
-          "InpDefault" : "adjective",
           "TrailingPunct" : ""
         },
         {
           "SubId" : 3,
-          "InpType" : 3,
-          "InpSubType" : 8,
+          "InpType" : 32,
           "InpPos" : 19,
-          "InpDefault" : "noun(animal)",
           "TrailingPunct" : "."
-          
         },
         {
           "SubId" : 4,
-          "InpType" : 3,
-          "InpSubType" : 2,
+          "InpType" : 34,
           "InpPos" : 26,
-          "InpDefault" : "noun(plural)",
           "TrailingPunct" : "."
         },
         {
           "SubId" : 5,
-          "InpType" : 3,
-          "InpSubType" : 1,
+          "InpType" : 33,
           "InpPos" : 33,
-          "InpDefault" : "noun",
           "TrailingPunct" : ""
         },
         {
           "SubId" : 6,
-          "InpType" : 3,
-          "InpSubType" : 3,
+          "InpType" : 32,
           "InpPos" : 36,
-          "InpDefault" : "noun(plural)",
           "TrailingPunct" : ""
         },
         {
           "SubId" : 7,
-          "InpType" : 1,
-          "InpSubType" : 1,
+          "InpType" : 11,
           "InpPos" : 42,
-          "InpDefault" : "adjective",
           "TrailingPunct" : ""
         },
         {
           "SubId" : 8,
-          "InpType" : 3,
-          "InpSubType" : 2,
+          "InpType" : 32,
           "InpPos" : 56,
-          "InpDefault" : "noun(plural)",
           "TrailingPunct" : ""
         },
         {
           "SubId" : 9,
-          "InpType" : 3,
-          "InpSubType" : 2,
+          "InpType" : 34,
           "InpPos" : 66,
-          "InpDefault" : "noun(plural)",
           "TrailingPunct" : "?"
         },
         {
           "SubId" : 10,
-          "InpType" : 4,
-          "InpSubType" : 1,
+          "InpType" : 44,
           "InpPos" : 77,
-          "InpDefault" : "verb(present)",
           "TrailingPunct" : ""
         },
         {
           "SubId" : 11,
-          "InpType" : 3,
-          "InpSubType" : 1,
+          "InpType" : 37,
           "InpPos" : 87,
-          "InpDefault" : "noun",
-          "TrailingPunct" : ""
+         "TrailingPunct" : ""
         },
         {
           "SubId" : 12,
-          "InpType" : 4,
-          "InpSubType" : 1,
+          "InpType" : 41,
           "InpPos" : 91,
-          "InpDefault" : "verb",
           "TrailingPunct" : ""
         },
         {
           "SubId" : 13,
-          "InpType" : 1,
-          "InpSubType" : 1,
+          "InpType" : 11,
           "InpPos" : 110,
-          "InpDefault" : "adjective",
           "TrailingPunct" : ""
         },
         {
           "SubId" : 14,
-          "InpType" : 3,
-          "InpSubType" : 2,
+          "InpType" : 38,
           "InpPos" : 114,
-          "InpDefault" : "noun(plural)",
           "TrailingPunct" : ""
         },
         {
           "SubId" : 15,
-          "InpType" : 3,
-          "InpSubType" : 1,
+          "InpType" : 35,
           "InpPos" : 121,
-          "InpDefault" : "noun",
           "TrailingPunct" : ""
         },
         {
           "SubId" : 16,
-          "InpType" : 3,
-          "InpSubType" : 7,
-          "InpPos" : 124, 
-          "InpDefault" : "noun(place)",
-          "   " : "."
+          "InpType" : 36,
+          "InpPos" : 123, 
+          "TrailingPunct" : ""
         }
     ]
 }
