@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Card, Col, Container, Form } from "react-bootstrap"
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,18 +12,32 @@ const FormDisplay = ({ madLibTitle, imageURL, madLibText, subWords,  ...other })
     // const [submitted, setSubmitted] = useState([])
     const [madTextDisplay, setMadTextDisplay] = useState([madLibTextArray])
     const [isMadDisplayed, setIsMadDisplayed] = useState(false)
+    const [randWords, setRandWords] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
-    const toggleMad = () => setIsMadDisplayed(!isMadDisplayed)
+    useEffect(()=>{
+      wordsFromApi();}
+      ,[]);
+  
+    async function wordsFromApi() {
+    const wordPromise = await fetch("https://funnywords.herokuapp.com/api/words/")
+    const getWordList = await wordPromise.json()
+    setRandWords(getWordList)
+    setIsLoading(false)
+}
 
-    
-        
-    // function handleSubmit(event) {
-    //   event.preventDefault()
-    //   setSubmitted(prevArray =>
-    //     [... prevArray,
-    //       // form validation setup
-    //     ])
-    // }
+
+
+// take in the previous madTextDisplay array
+// map through it until the array item index (-1) matches the next item in the subWords array. 
+// then randomly select assign a word based on the sub word inp type.
+// return the updated array
+
+  
+  
+  
+  const toggleMad = () => setIsMadDisplayed(!isMadDisplayed)
+
 
     function renderSwitch(InpType) {
       // switch statement that returns placeholder text based on the word type (noun/verb)
@@ -65,9 +79,11 @@ const FormDisplay = ({ madLibTitle, imageURL, madLibText, subWords,  ...other })
       setMadTextDisplay(prevDisplay => {
         const newDisplay = [...prevDisplay]
         newDisplay[0][sub.InpPos-1] = value + sub.TrailingPunct
+        console.log(newDisplay)
         return newDisplay
       })
       }
+
 
 return (
         <Container className="text-center">
@@ -80,9 +96,12 @@ return (
             <h2 style={{fontStyle: 'italic'}}>{madLibTitle}</h2>
             <br/>
             <Button variant="primary" onClick={toggleMad}>{isMadDisplayed ? `Reset!` : `Create`}</Button>
-            {!isMadDisplayed ?
-              <Button variant="info" onClick={toggleMad}>Randomize!</Button> : null}
+            {!isMadDisplayed && isLoading ? 
+              <Button variant="info" disabled>Randomize!</Button> : null}
+            {!isMadDisplayed && !isLoading ? 
+              <Button variant="info" onClick={wordsFromApi}>Randomize!</Button> : null}
             <br/>
+
             </Card.Header>
 
           {!isMadDisplayed ? <div>

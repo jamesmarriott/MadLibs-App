@@ -6,11 +6,11 @@ const GetJSON = () => {
   const [data, setData] = useState({})
   const [isLoading, setIsLoading] = useState(true)
   
+  
   useEffect(()=>{
     getData();}
     ,[]);
 
-// Separate function.
   async function getData() {
   const response = await fetch('data.json');
   const myJson = await response.json();
