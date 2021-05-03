@@ -13,7 +13,7 @@ const FormDisplay = ({ madLibTitle, imageURL, madLibText, subWords,  ...other })
     const [madTextDisplay, setMadTextDisplay] = useState([madLibTextArray])
     const [isMadDisplayed, setIsMadDisplayed] = useState(false)
     const [randWords, setRandWords] = useState([])
-    const [isLoading, setIsLoading] = useState(true)
+    const [isApiLoading, setIsApiLoading] = useState(true)
 
     const toggleMad = () => setIsMadDisplayed(!isMadDisplayed)
 
@@ -25,8 +25,7 @@ const FormDisplay = ({ madLibTitle, imageURL, madLibText, subWords,  ...other })
     const wordPromise = await fetch("https://funnywords.herokuapp.com/api/words/")
     const getWordList = await wordPromise.json()
     setRandWords(getWordList)
-    setIsLoading(false)
-    console.log(isLoading)
+    setIsApiLoading(false)
     } 
 
   function randomize() {
@@ -35,48 +34,17 @@ const FormDisplay = ({ madLibTitle, imageURL, madLibText, subWords,  ...other })
       const newDisplay = [...prevDisplay]
       Object.values(subWords).map(sub => {
         Object.values(randWords).map(value => {
-          if (value.id === 11) {
+          if (value.id === sub.InpType) {
             const randomIndex = Math.floor(Math.random() * value.words.length)
-            randWord = value.words[randomIndex]
-            console.log(randWord)
+            randWord = value.words[randomIndex] + sub.TrailingPunct
           }
         })
         newDisplay[0][sub.InpPos-1] = randWord
       })
       return newDisplay 
-    }
-  )
-}
-
-      
-        
-      // newDisplay[0][0] = "hello"
-      // // newDisplay[0][sub.InpPos-1] = value + sub.TrailingPunct
-      
-    
-
-
-    // <Form.Row className='align-items-center'>
-    // {Object.values(subWords).map(sub=>
-    //     <Col xs="auto">
-    //       <Form.Control 
-    //       size="lg"
-    //       key="sub.SubId"
-    //       type="text"
-    //       name={sub.SubId}
-    //       value={userInput.userInput}
-    //       placeHolder={renderSwitch(sub.InpType)}
-    //       onChange={(e) => {handleChange(e, sub)}}
-    //     />
-    //   </Col>
-    // )}
-
-// take in the previous madTextDisplay array
-// map through it until the array item index (-1) matches the next item in the subWords array. 
-// then randomly select assign a word based on the sub word inp type.
-// return the updated array
-  
-  
+      }
+    )
+  }
 
 
     function renderSwitch(InpType) {
@@ -134,11 +102,10 @@ return (
             <Card.Header>
             <h2 style={{fontStyle: 'italic'}}>{madLibTitle}</h2>
             <br/>
-            <Button variant="primary" onClick={toggleMad}>{isMadDisplayed ? `Reset!` : `Create`}</Button>
-            {!isMadDisplayed && !isLoading ?
-              <Button variant="info" disabled>Randomize!</Button> : null}
-            {!isMadDisplayed && isLoading ?
-              <Button variant="info" onClick={randomize}>Randomize!</Button> : null}
+            <Button variant="primary" onClick={toggleMad}>{isMadDisplayed ? `Reset!` : `Create`}</Button>            
+            {isApiLoading ?
+              <Button variant="info" disabled>Randomize!</Button>
+            : <Button variant="info" onClick={randomize}>Randomize!</Button>}
             <br/>
 
             </Card.Header>

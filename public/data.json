@@ -17,13 +17,13 @@
         },
         {
           "SubId" : 3,
-          "InpType" : 32,
+          "InpType" : 37,
           "InpPos" : 19,
           "TrailingPunct" : "."
         },
         {
           "SubId" : 4,
-          "InpType" : 34,
+          "InpType" : 32,
           "InpPos" : 26,
           "TrailingPunct" : "."
         },
@@ -59,7 +59,7 @@
         },
         {
           "SubId" : 10,
-          "InpType" : 44,
+          "InpType" : 41,
           "InpPos" : 77,
           "TrailingPunct" : ""
         },
@@ -97,7 +97,7 @@
           "SubId" : 16,
           "InpType" : 36,
           "InpPos" : 123, 
-          "TrailingPunct" : ""
+          "TrailingPunct" : "."
         }
     ]
 }
