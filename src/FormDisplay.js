@@ -6,6 +6,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const FormDisplay = ({ madLibTitle, imageURL, madLibText, subWords,  ...other }) => {
 
     const madLibTextArray = Array.from(madLibText.split(" "))
+    const allSubPosArray = []
+    subWords.forEach(item => {
+      allSubPosArray.push(item.InpPos)
+    })
 
     const [madLib, setMadLib]  = useState()
     const [userInput] = useState({enterNewWord: ""})
@@ -155,15 +159,10 @@ return (
               <Card.Img className="op-img" src={imageURL} alt="Image behind text"/>
               <Card.ImgOverlay>
                   <Card.Text>
-                    {madTextDisplay[0].map((word, Id) => {
-
-                      /// make an array from json / SubId. If the ID any of the items in the array display color differently. 
-                      if (Id === )
-
-                      /// if Id SubId === 
-                    }
-                    <span key={Id}> {word}
-                    </span>
+                    {madTextDisplay[0].map((word, Id) =>
+                    allSubPosArray.includes(Id+1) ? 
+                    <span key={Id} style={{color: 'pink'}}><strong>{word} </strong></span> :
+                    <span key={Id}>{word} </span>
                     )}
                   </Card.Text>
               </Card.ImgOverlay>
