@@ -28,6 +28,22 @@ const FormDisplay = ({ madLibTitle, imageURL, madLibText, subWords,  ...other })
     setIsApiLoading(false)
     } 
 
+// function grabRandom(sub) {
+//       let randWord = ''
+//           Object.values(randWords).map(value => {
+//             if (value.id === sub) {
+//               const randomIndex = Math.floor(Math.random() * value.words.length)
+//               randWord = value.words[randomIndex]
+//             }
+//           })
+//         console.log(randWord)
+//           return randWord
+//         }
+// value={grabRandom(sub.InpType)}
+// !!When the user hits randomize - first autofill the form / then take the random form entries into the array. Disable the form entry and flash 'create' button. Allow entire reset.
+  
+  
+
   function randomize() {
     let randWord = ''
     setMadTextDisplay(prevDisplay => {
@@ -139,7 +155,13 @@ return (
               <Card.Img className="op-img" src={imageURL} alt="Image behind text"/>
               <Card.ImgOverlay>
                   <Card.Text>
-                    {madTextDisplay[0].map((word, Id) =>
+                    {madTextDisplay[0].map((word, Id) => {
+
+                      /// make an array from json / SubId. If the ID any of the items in the array display color differently. 
+                      if (Id === )
+
+                      /// if Id SubId === 
+                    }
                     <span key={Id}> {word}
                     </span>
                     )}
