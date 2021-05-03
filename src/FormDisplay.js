@@ -15,16 +15,18 @@ const FormDisplay = ({ madLibTitle, imageURL, madLibText, subWords,  ...other })
     const [randWords, setRandWords] = useState([])
     const [isLoading, setIsLoading] = useState(true)
 
+    const toggleMad = () => setIsMadDisplayed(!isMadDisplayed)
+
     useEffect(()=>{
-      wordsFromApi();}
-      ,[]);
+      wordsFromApi();
+    },[]);
   
     async function wordsFromApi() {
     const wordPromise = await fetch("https://funnywords.herokuapp.com/api/words/")
     const getWordList = await wordPromise.json()
     setRandWords(getWordList)
     setIsLoading(false)
-    randomize()
+    console.log(isLoading)
     } 
 
   function randomize() {
@@ -34,7 +36,8 @@ const FormDisplay = ({ madLibTitle, imageURL, madLibText, subWords,  ...other })
       Object.values(subWords).map(sub => {
         Object.values(randWords).map(value => {
           if (value.id === 11) {
-            randWord = value.words[1]
+            const randomIndex = Math.floor(Math.random() * value.words.length)
+            randWord = value.words[randomIndex]
             console.log(randWord)
           }
         })
@@ -74,7 +77,6 @@ const FormDisplay = ({ madLibTitle, imageURL, madLibText, subWords,  ...other })
 // return the updated array
   
   
-  const toggleMad = () => setIsMadDisplayed(!isMadDisplayed)
 
 
     function renderSwitch(InpType) {
@@ -133,10 +135,10 @@ return (
             <h2 style={{fontStyle: 'italic'}}>{madLibTitle}</h2>
             <br/>
             <Button variant="primary" onClick={toggleMad}>{isMadDisplayed ? `Reset!` : `Create`}</Button>
-            {!isMadDisplayed && isLoading ? 
+            {!isMadDisplayed && !isLoading ?
               <Button variant="info" disabled>Randomize!</Button> : null}
-            {!isMadDisplayed && !isLoading ? 
-              <Button variant="info" onClick={wordsFromApi}>Randomize!</Button> : null}
+            {!isMadDisplayed && isLoading ?
+              <Button variant="info" onClick={randomize}>Randomize!</Button> : null}
             <br/>
 
             </Card.Header>
