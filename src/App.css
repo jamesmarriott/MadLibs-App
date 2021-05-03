@@ -1,3 +1,8 @@
+body {
+  font-family: 'Balsamiq Sans', cursive;
+  /* font-family: 'Gochi Hand', cursive; */
+}
+
 .header {
   text-align: center;
 }

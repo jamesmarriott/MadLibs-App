@@ -10,7 +10,7 @@ const FormDisplay = ({ madLibTitle, imageURL, madLibText, subWords,  ...other })
     subWords.forEach(item => {
       allSubPosArray.push(item.InpPos)
     })
-
+    const [isRandomActive, setIsRandomActive] = useState(false)
     const [madLib, setMadLib]  = useState()
     const [userInput] = useState({enterNewWord: ""})
     // const [submitted, setSubmitted] = useState([])
@@ -25,28 +25,16 @@ const FormDisplay = ({ madLibTitle, imageURL, madLibText, subWords,  ...other })
       wordsFromApi();
     },[]);
   
+    useEffect(()=>{
+      console.log(isRandomActive)
+    },[isRandomActive]);
+    
     async function wordsFromApi() {
     const wordPromise = await fetch("https://funnywords.herokuapp.com/api/words/")
     const getWordList = await wordPromise.json()
     setRandWords(getWordList)
     setIsApiLoading(false)
-    } 
-
-// function grabRandom(sub) {
-//       let randWord = ''
-//           Object.values(randWords).map(value => {
-//             if (value.id === sub) {
-//               const randomIndex = Math.floor(Math.random() * value.words.length)
-//               randWord = value.words[randomIndex]
-//             }
-//           })
-//         console.log(randWord)
-//           return randWord
-//         }
-// value={grabRandom(sub.InpType)}
-// !!When the user hits randomize - first autofill the form / then take the random form entries into the array. Disable the form entry and flash 'create' button. Allow entire reset.
-  
-  
+    }
 
   function randomize() {
     let randWord = ''
@@ -61,11 +49,11 @@ const FormDisplay = ({ madLibTitle, imageURL, madLibText, subWords,  ...other })
         })
         newDisplay[0][sub.InpPos-1] = randWord
       })
-      return newDisplay 
+      return newDisplay
       }
     )
+    setIsRandomActive(true)
   }
-
 
     function renderSwitch(InpType) {
       // switch statement that returns placeholder text based on the word type (noun/verb)
@@ -142,6 +130,7 @@ return (
                             type="text"
                             name={sub.SubId}
                             value={userInput.userInput}
+                            defaultValue={isRandomActive ? "random" : null}
                             placeHolder={renderSwitch(sub.InpType)}
                             onChange={(e) => {handleChange(e, sub)}}
                           />
