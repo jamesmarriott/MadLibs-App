@@ -24,16 +24,54 @@ const FormDisplay = ({ madLibTitle, imageURL, madLibText, subWords,  ...other })
     const getWordList = await wordPromise.json()
     setRandWords(getWordList)
     setIsLoading(false)
+    randomize()
+    } 
+
+  function randomize() {
+    let randWord = ''
+    setMadTextDisplay(prevDisplay => {
+      const newDisplay = [...prevDisplay]
+      Object.values(subWords).map(sub => {
+        Object.values(randWords).map(value => {
+          if (value.id === 11) {
+            randWord = value.words[1]
+            console.log(randWord)
+          }
+        })
+        newDisplay[0][sub.InpPos-1] = randWord
+      })
+      return newDisplay 
+    }
+  )
 }
 
+      
+        
+      // newDisplay[0][0] = "hello"
+      // // newDisplay[0][sub.InpPos-1] = value + sub.TrailingPunct
+      
+    
 
+
+    // <Form.Row className='align-items-center'>
+    // {Object.values(subWords).map(sub=>
+    //     <Col xs="auto">
+    //       <Form.Control 
+    //       size="lg"
+    //       key="sub.SubId"
+    //       type="text"
+    //       name={sub.SubId}
+    //       value={userInput.userInput}
+    //       placeHolder={renderSwitch(sub.InpType)}
+    //       onChange={(e) => {handleChange(e, sub)}}
+    //     />
+    //   </Col>
+    // )}
 
 // take in the previous madTextDisplay array
 // map through it until the array item index (-1) matches the next item in the subWords array. 
 // then randomly select assign a word based on the sub word inp type.
 // return the updated array
-
-  
   
   
   const toggleMad = () => setIsMadDisplayed(!isMadDisplayed)
@@ -79,10 +117,9 @@ const FormDisplay = ({ madLibTitle, imageURL, madLibText, subWords,  ...other })
       setMadTextDisplay(prevDisplay => {
         const newDisplay = [...prevDisplay]
         newDisplay[0][sub.InpPos-1] = value + sub.TrailingPunct
-        console.log(newDisplay)
         return newDisplay
       })
-      }
+    }
 
 
 return (
