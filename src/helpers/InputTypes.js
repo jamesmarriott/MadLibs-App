@@ -1,0 +1,30 @@
+export function InputTypes(InpType) {
+  // switch statement that returns placeholder text based on the word type (noun/verb)
+    switch(InpType) {
+      case 11: return 'Adjective-General'
+      case 12: return 'Adjective-Number'
+      case 13: return 'Adjective-Color'          
+      case 21: return 'Adverb-General'
+      case 22: return 'Adverb-Time'          
+      case 31: return 'Noun-Thing'          
+      case 32: return 'Noun-Thing(plural)'          
+      case 33: return 'Noun-Person'          
+      case 34: return 'Noun-Person(plural)'          
+      case 35: return 'Noun-Place(common)'          
+      case 36: return 'Noun-Place(proper)'          
+      case 37: return 'Noun-Animal'          
+      case 38: return 'Noun-Animal(plural)'          
+      case 39: return 'Noun-BodyPart'          
+      case 310: return 'Noun-BodyPart(plural)'          
+      case 41: return 'Verb-Present'          
+      case 42: return 'Verb-Present(he/she/it)'          
+      case 43: return 'Verb-Present(-ing)'          
+      case 44: return 'Verb-Past'          
+      case 45: return 'Verb-PastPart'          
+      case 46: return 'Verb-Modal'          
+      case 51: return 'Exclamation-General'          
+      case 61: return 'First-Name'          
+      case 62: return	'Second-Name'         
+      default: return 'any word'
+  }
+}
