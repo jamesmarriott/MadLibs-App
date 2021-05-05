@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react"
-import { Card, Col, Container, Form } from "react-bootstrap"
-import Button from 'react-bootstrap/Button';
+import { Card, Col, Container, Form, Button } from "react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Displayer ({ madTextDisplay, imageURL, allSubPosArray }) {
 
-  console.log(imageURL)
 
   return (
   <>

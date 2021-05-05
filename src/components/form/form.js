@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Card, Col, Container, Form, Button, FormGroup } from "react-bootstrap"
+import { Card, Col, Container, Form, Button, ButtonGroup, FormGroup } from "react-bootstrap"
 import { InputTypes } from "../../helpers/InputTypes.js"
 import  Displayer  from "../displayer/displayer"
 // import { getRandomWord } from "../../helpers/getRandomWord.js"
@@ -20,6 +20,7 @@ export default function FormDisplay ({ madLibTitle, imageURL, madLibText, randWo
   })
 
   const toggleMad = () => setIsMadDisplayed(!isMadDisplayed)
+  const toggleForm = () => setFormSubmitted(!formSubmitted)
 
   function handleChange(event, sub) {
     const {name, value} = event.target
@@ -83,11 +84,20 @@ export default function FormDisplay ({ madLibTitle, imageURL, madLibText, randWo
                   </Col>
                 )}
             </Form.Row>
-            <Button className="btn btn-primary btn-large centerButton" type="submit">Get Mad!</Button>
-            <Button variant="info" onClick={fillFormRandom}>Randomize!</Button>
+            <Button className="btn btn-primary btn-large centerButton" type="submit">Create</Button>
+            <Button variant="info" onClick={fillFormRandom}>Random fill!</Button>
           </FormGroup>
         </form>
       : <Displayer madTextDisplay={madTextDisplay} imageURL={imageURL} allSubPosArray={allSubPosArray}/>}
+
+      <container>
+      <ButtonGroup>
+        <Button variant="secondary" onClick={toggleForm}>Reset</Button>
+        <Button variant="info" onClick={fillFormRandom}>Random fill!</Button>
+        <Button variant="secondary">Right</Button>
+      </ButtonGroup>
+      <br></br>
+      </container>
       </>
     )
   }

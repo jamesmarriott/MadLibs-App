@@ -1,0 +1,73 @@
+{
+    "madLibTitle": "Anthony and Sophie's Amazing Adventure",
+    "imageURL": "https://source.unsplash.com/N-gQVr6CZ70/",
+    "madLibText": "Once upon a time, Sophie and Anthony were <1,43> in a <2,35> suddenly, they came upon a magical <4,37> with <5,11> <6,310>. Anthony said <7,51> and Sophie replied <8,51>. Then they saw a huge <9,31> with weird <10,310> and ran all the way to <11>. The end.",
+    "subWords" : [
+        {
+          "SubId" : 1,
+          "InpType" : 43,
+          "InpPos" : 9,
+          "TrailingPunct" : ""
+        },
+        {
+          "SubId" : 2,
+          "InpType" : 35,
+          "InpPos" : 12,
+          "TrailingPunct" : ""
+        },
+        {
+          "SubId" : 3,
+          "InpType" : 21,
+          "InpPos" : 13,
+          "TrailingPunct" : "."
+        },
+        {
+          "SubId" : 4,
+          "InpType" : 37,
+          "InpPos" : 19,
+          "TrailingPunct" : "."
+        },
+        {
+          "SubId" : 5,
+          "InpType" : 11,
+          "InpPos" : 21,
+          "TrailingPunct" : ""
+        },
+        {
+          "SubId" : 6,
+          "InpType" : 310,
+          "InpPos" : 22,
+          "TrailingPunct" : ""
+        },
+        {
+          "SubId" : 7,
+          "InpType" : 51,
+          "InpPos" : 25,
+          "TrailingPunct" : ""
+        },
+        {
+          "SubId" : 8,
+          "InpType" : 51,
+          "InpPos" : 29,
+          "TrailingPunct" : ""
+        },
+        {
+          "SubId" : 9,
+          "InpType" : 31,
+          "InpPos" : 35,
+          "TrailingPunct" : ""
+        },
+        {
+          "SubId" : 10,
+          "InpType" : 310,
+          "InpPos" : 38,
+          "TrailingPunct" : ""
+        },
+        {
+          "SubId" : 11,
+          "InpType" : 36,
+          "InpPos" : 45,
+          "TrailingPunct" : ""
+        }
+  ]
+}
