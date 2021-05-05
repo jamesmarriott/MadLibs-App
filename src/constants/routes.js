@@ -1,2 +1,2 @@
 export const HOME = '/';
-export const MADLIB = '/MadLibDisplay';
+export const MADZ = '/Madz';
