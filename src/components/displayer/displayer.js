@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react"
-import { Card } from "react-bootstrap"
+import { Card, Col, Container, Form } from "react-bootstrap"
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default function Displayer ({ madTextDisplay }) {
+export default function Displayer ({ madTextDisplay, imageURL, allSubPosArray }) {
+
+  console.log(imageURL)
 
   return (
   <>
@@ -11,7 +15,7 @@ export default function Displayer ({ madTextDisplay }) {
           <Card.ImgOverlay>
             <Card.Text>
               {madTextDisplay[0].map((word, Id) =>
-              allSubPosArray.includes(Id+1) ? 
+              allSubPosArray.includes(Id+1) ?
               <span key={Id} style={{color: 'pink'}}><strong>{word} </strong></span> :
               <span key={Id}>{word} </span>
               )}

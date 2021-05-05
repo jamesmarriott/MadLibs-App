@@ -1,0 +1,103 @@
+{
+  "madLibTitle": "Who is the Real Easter Bunny?",
+  "imageURL": "https://source.unsplash.com/N-gQVr6CZ70/",
+  "madLibText": "How much do you really know about the <1> Easter Bunny? Here's the <2> scoop on this mysterious <3>. Does the Easter Bunny have magical <4>? Absolutely! How else could one furry <5> deliver candy-filled <6> to children everywhere in one <7> night? Santa has elves and reindeer to help  him make and deliver <8> on Christmas. Does the Easter Bunny have any right-hand <9>? As far as we know, the Easter Bunny like to <10> alone. Like other bunnies, he is a very shy <11> and prefers to <12> all by himself. Where does the Easter Bunny live? Only the Easter Bunny knows the answer to this <13> question, though some <14> believe he lives in a cozy <15> in <16>.",
+  "subWords" : [
+      {
+        "SubId" : 1,
+        "InpType" : 11,
+        "InpPos" : 9,
+        "TrailingPunct" : ""
+      },
+      {
+        "SubId" : 2,
+        "InpType" : 11,
+        "InpPos" : 14,
+        "TrailingPunct" : ""
+      },
+      {
+        "SubId" : 3,
+        "InpType" : 37,
+        "InpPos" : 19,
+        "TrailingPunct" : "."
+      },
+      {
+        "SubId" : 4,
+        "InpType" : 32,
+        "InpPos" : 26,
+        "TrailingPunct" : "."
+      },
+      {
+        "SubId" : 5,
+        "InpType" : 33,
+        "InpPos" : 33,
+        "TrailingPunct" : ""
+      },
+      {
+        "SubId" : 6,
+        "InpType" : 32,
+        "InpPos" : 36,
+        "TrailingPunct" : ""
+      },
+      {
+        "SubId" : 7,
+        "InpType" : 11,
+        "InpPos" : 42,
+        "TrailingPunct" : ""
+      },
+      {
+        "SubId" : 8,
+        "InpType" : 32,
+        "InpPos" : 56,
+        "TrailingPunct" : ""
+      },
+      {
+        "SubId" : 9,
+        "InpType" : 34,
+        "InpPos" : 66,
+        "TrailingPunct" : "?"
+      },
+      {
+        "SubId" : 10,
+        "InpType" : 41,
+        "InpPos" : 77,
+        "TrailingPunct" : ""
+      },
+      {
+        "SubId" : 11,
+        "InpType" : 37,
+        "InpPos" : 87,
+       "TrailingPunct" : ""
+      },
+      {
+        "SubId" : 12,
+        "InpType" : 41,
+        "InpPos" : 91,
+        "TrailingPunct" : ""
+      },
+      {
+        "SubId" : 13,
+        "InpType" : 11,
+        "InpPos" : 110,
+        "TrailingPunct" : ""
+      },
+      {
+        "SubId" : 14,
+        "InpType" : 38,
+        "InpPos" : 114,
+        "TrailingPunct" : ""
+      },
+      {
+        "SubId" : 15,
+        "InpType" : 35,
+        "InpPos" : 121,
+        "TrailingPunct" : ""
+      },
+      {
+        "SubId" : 16,
+        "InpType" : 36,
+        "InpPos" : 123, 
+        "TrailingPunct" : "."
+      }
+  ]
+}

@@ -27,7 +27,7 @@ export default function Home () {
          <Container className="text-center">
              <Header {...data }></Header>
                 {data && randWordList ? 
-                  <FormDisplay {...data} randWordList= {randWordList} />
+                  <FormDisplay {...data} randWordList={randWordList} />
                   : null }
               <Footer></Footer>
           </Container>

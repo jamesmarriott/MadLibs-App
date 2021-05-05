@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Card, Col, Container, Form, Button, FormGroup } from "react-bootstrap"
 import { InputTypes } from "../../helpers/InputTypes.js"
+import  Displayer  from "../displayer/displayer"
 // import { getRandomWord } from "../../helpers/getRandomWord.js"
 
 export default function FormDisplay ({ madLibTitle, imageURL, madLibText, randWordList, subWords, ...other }) {
@@ -12,6 +13,11 @@ export default function FormDisplay ({ madLibTitle, imageURL, madLibText, randWo
   const [isMadDisplayed, setIsMadDisplayed] = useState(false)
   const [isRandomActive, setIsRandomActive] = useState(false)
   const [isApiLoading, setIsApiLoading] = useState(true)
+  const [formSubmitted, setFormSubmitted] = useState(false)
+  const allSubPosArray = []
+  subWords.forEach(item => {
+    allSubPosArray.push(item.InpPos)
+  })
 
   const toggleMad = () => setIsMadDisplayed(!isMadDisplayed)
 
@@ -29,14 +35,19 @@ export default function FormDisplay ({ madLibTitle, imageURL, madLibText, randWo
   }
 
  function formSubmit(event, target) {
-
-    
-    console.log(event.value)
-    // check all the boxes are filled
-    // if not tell the user to complete form
-    // disble button until all completed
-    // then use router display madlib
-  }
+        event.preventDefault();
+        for (let i=0; i<event.target.length; i++) {
+          const subPos = allSubPosArray[i]
+          const formValue = event.target[i].value
+          setMadTextDisplay(prevDisplay => {
+            const newDisplay = [...prevDisplay]
+            newDisplay[0][subPos-1] = formValue
+            return newDisplay
+          }
+          )
+        }
+      setFormSubmitted(!formSubmitted)
+    }
 
   const fillFormRandom = () => setIsRandomActive(!isRandomActive)
 
@@ -52,27 +63,31 @@ export default function FormDisplay ({ madLibTitle, imageURL, madLibText, randWo
   }
 
   return (
-    <form onSubmit={formSubmit}>
-      <FormGroup role="wordentry">
-          <Form.Row className='align-items-center'>
-              {Object.values(subWords).map(sub=>
-                  <Col xs="auto">
-                    <Form.Control 
-                    size="lg"
-                    key="sub.SubId"
-                    type="text"
-                    name={sub.SubId}
-                    defaultValue={getRandomWord(sub.InpType)}
-                    value={isRandomActive ? getRandomWord(sub.InpType) : null}
-                    placeHolder={InputTypes(sub.InpType)}
-                    onChange={(e) => {handleChange(e, sub)}}
-                  />
-                </Col>
-              )}
-          </Form.Row>
-          <Button className="btn btn-primary btn-large centerButton" type="submit">Get Mad!</Button>
-          <Button variant="info" onClick={fillFormRandom}>Randomize!</Button>
-        </FormGroup>
-      </form>
+    <>
+      {!formSubmitted ?
+      <form onSubmit={formSubmit}>
+          <FormGroup role="wordentry">
+            <Form.Row className='align-items-center'>
+                {Object.values(subWords).map(sub=>
+                    <Col xs="auto">
+                      <Form.Control 
+                      size="lg"
+                      key="sub.SubId"
+                      type="text"
+                      name={sub.SubId}
+                      defaultValue={getRandomWord(sub.InpType)}
+                      value={isRandomActive ? getRandomWord(sub.InpType) : null}
+                      placeHolder={InputTypes(sub.InpType)}
+                      onChange={(e) => {handleChange(e, sub)}}
+                    />
+                  </Col>
+                )}
+            </Form.Row>
+            <Button className="btn btn-primary btn-large centerButton" type="submit">Get Mad!</Button>
+            <Button variant="info" onClick={fillFormRandom}>Randomize!</Button>
+          </FormGroup>
+        </form>
+      : <Displayer madTextDisplay={madTextDisplay} imageURL={imageURL} allSubPosArray={allSubPosArray}/>}
+      </>
     )
   }
