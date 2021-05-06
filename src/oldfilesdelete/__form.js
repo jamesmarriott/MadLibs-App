@@ -37,9 +37,6 @@ const FormDisplay = ({ madLibTitle, imageURL, madLibText, subWords,  ...other })
     setIsApiLoading(false)
     }
 
-  function getRandomWord() {
-
-  }
 
   function randomize() {
     let randWord = ''

@@ -1,15 +1,16 @@
 //import dependencies
 import React, {useState,useEffect} from "react"
 import { BrowserRouter as Router, Switch } from 'react-router-dom'
-import { Container } from "react-bootstrap";
+import { Container, Button, ButtonGroup } from "react-bootstrap";
 import FormDisplay from "../components/form/form"
 import Header from "../components/header/header"
 import Footer from "../components/footer/footer"
-import data from "../fixtures/madLibJSON.json"
+import madLibData from "../fixtures/madLibJSON.json"
 
 export default function Home () {
   const [isApiLoading, setIsApiLoading] = useState(true)
   const [randWordList, setRandWordList] = useState({})
+  let data = madLibData
 
   useEffect(()=>{
     apiCaller();
@@ -28,9 +29,10 @@ export default function Home () {
              <Header {...data }></Header>
                 {data && randWordList ? 
                   <FormDisplay {...data} randWordList={randWordList} />
-                  : null }
+                  : <h1>Loading please wait</h1>
+                  }
               <Footer></Footer>
           </Container>
-      </>
+        </>
     )
 }
