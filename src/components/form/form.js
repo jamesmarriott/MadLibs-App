@@ -109,6 +109,7 @@ function validateForm(event, target){
                <Button ref={target} className="btn btn-primary btn-large centerButton" type="submit">Create</Button>
             <Button variant="info" onClick={fillFormRandom}>Fill Random</Button>
             </ButtonGroup>
+            
             {formError ?      
           
             <Alert variant="danger">

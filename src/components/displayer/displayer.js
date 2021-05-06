@@ -6,6 +6,10 @@ export default function FormDisplay ({ madTextDisplay, imageURL, allSubPosArray,
 
   const [madDisplayer, setMadDisplayer] = useState([madTextDisplay])
   
+  const refreshPage = ()=>{
+    window.location.reload();
+ }
+  
   const toggleForm = () => {}
 
 
@@ -53,6 +57,7 @@ export default function FormDisplay ({ madTextDisplay, imageURL, allSubPosArray,
     </Card>
       <ButtonGroup style={{padding: "10px"}}>
         <Button variant="info" onClick={fillMadRandom}>Randomize</Button>
+        <Button variant="warning" onClick={refreshPage}>Restart</Button>
       </ButtonGroup>
   </>
  )
