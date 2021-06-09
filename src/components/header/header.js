@@ -5,8 +5,9 @@ export default function Header ({ madLibTitle, ...other }) {
   return (
     <>
       <Card.Header>
-      <h1>MadLibz!</h1>
-        <p>Enter words - adjectives, nouns etc. - using the form below and click 'Create' to make a funny story.</p>
+      <h1>MadLibz Generator!</h1>
+        <p>Enter your own words by category. Or click 'fill random' to use the <strong>generator.</strong></p>
+        <i class="fas fa-grin-tongue-wink"></i>
       </Card.Header>
       <br/>
       <Card.Header>
